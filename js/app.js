@@ -20,7 +20,7 @@ App.CityAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(fixtures, query, type) {
     return fixtures.filter(function(city) {
       return city.province == query.provinceId;
-    })
+    });
   }
 });
 
@@ -28,7 +28,7 @@ App.TownAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(fixtures, query, type) {
     return fixtures.filter(function(town) {
       return town.city == query.cityId;
-    })
+    });
   }
 });
 
