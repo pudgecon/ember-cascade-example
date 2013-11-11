@@ -19,7 +19,9 @@ App.Town = DS.Model.extend({
 App.CityAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(fixtures, query, type) {
     return fixtures.filter(function(city) {
-      return city.province == query.provinceId;
+      return city.province instanceof Ember.Object ?
+        city.province.get('id') == query.provinceId :
+        city.province == query.provinceId;
     });
   }
 });
@@ -27,7 +29,9 @@ App.CityAdapter = DS.FixtureAdapter.extend({
 App.TownAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(fixtures, query, type) {
     return fixtures.filter(function(town) {
-      return town.city == query.cityId;
+      return town.city instanceof Ember.Object ?
+        town.city.get('id') == query.cityId :
+        town.city == query.cityId;
     });
   }
 });
