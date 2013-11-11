@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    Ember Cascade Example
+
+    <form>
+      <label>省</label>
+      {{view Ember.Select
+          contentBinding="provinces"
+          optionLabelPath="content.name"
+          optionValuePath="content.id"
+          selectionBinding="province"
+          prompt="--- 选择省 ---"}}
+
+      <label>市</label>
+      {{view Ember.Select
+          contentBinding="cities"
+          optionLabelPath="content.name"
+          optionValuePath="content.id"
+          selectionBinding="city"
+          prompt="--- 选择市 ---"}}
+
+      <label>镇</label>
+      {{view Ember.Select
+          contentBinding="towns"
+          optionLabelPath="content.name"
+          optionValuePath="content.id"
+          selectionBinding="town"
+          prompt="--- 选择镇 ---"}}
+    </form>
+
+    已选择：省：{{province.name}}，市：{{city.name}}，镇：{{town.name}}
+  </script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0.js"></script>
+  <script src="js/libs/ember-1.1.2.js"></script>
+  <script src="js/libs/ember-data-v1.0.0-beta.3-2.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
